@@ -17,3 +17,7 @@ type CreateUserInput struct {
 	Gender    string `json:"gender"`
 	BirthYear uint   `json:"birth_year"`
 }
+
+type UpdateUserInput struct {
+	UserInfo
+}

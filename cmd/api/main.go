@@ -12,6 +12,8 @@ func main() {
 	r.GET("/users", controllers.GetUsers)
 	r.GET("/users/:id", controllers.GetUser)
 	r.POST("/users", controllers.CreateUser)
+	r.PATCH("/users/:id", controllers.UpdateUser)
+	r.DELETE("/users/:id", controllers.DeleteUser)
 
 	models.ConnectDatabase()
 
