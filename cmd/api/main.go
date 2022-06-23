@@ -10,6 +10,8 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/users", controllers.GetUsers)
+	r.GET("/users/:id", controllers.GetUser)
+	r.POST("/users", controllers.CreateUser)
 
 	models.ConnectDatabase()
 
