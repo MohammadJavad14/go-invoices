@@ -71,6 +71,7 @@ func CreateInvoice(ctx *gin.Context) {
 	invoice := models.Invoice{}
 	invoice.UserID = user.ID
 	invoice.Price = input.Price
+
 	invoice.PaidAt = input.PaidAt
 	models.DB.Create(&invoice)
 
@@ -105,6 +106,7 @@ func UpdateInvoice(ctx *gin.Context) {
 
 	models.DB.Model(&invoice).Updates(map[string]interface{}{
 		"price":   input.Price,
+		"is_paid": input.IsPaid,
 		"paid_at": input.PaidAt,
 	})
 

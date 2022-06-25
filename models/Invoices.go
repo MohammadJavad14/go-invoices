@@ -8,6 +8,7 @@ import (
 
 type InvoiceInfo struct {
 	Price  uint      `json:"price"`
+	IsPaid *bool     `json:"is_paid"  gorm:"default:false"`
 	PaidAt time.Time `json:"paid_at"`
 }
 type Invoice struct {
@@ -19,6 +20,7 @@ type Invoice struct {
 
 type CreateInvoiceInput struct {
 	Price  uint      `json:"price" binding:"required"`
+	IsPaid *bool     `json:"is_paid" gorm:"default:false"`
 	PaidAt time.Time `json:"paid_at"`
 }
 

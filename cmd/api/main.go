@@ -21,6 +21,8 @@ func main() {
 	r.PATCH("/users/:id/invoices/:invoice_id", controllers.UpdateInvoice)
 	r.DELETE("/users/:id/invoices/:invoice_id", controllers.DeleteInvoice)
 
+	r.GET("/total_paid_invoices", controllers.TotalPaidInvoices)
+
 	models.ConnectDatabase()
 
 	r.Run()
